@@ -1,0 +1,101 @@
+
+
+<form action="emailto:contato@infoternet.com" method="post">
+<fieldset id="inscrição"><legend>Inscrição do Professor</legend>
+	
+	<fieldset id="projeto"><legend>Tipo de Projeto</legend>
+
+
+		<label><input type="radio" name="tinscrição" id="cmini" autofocus="autofocus" value="minicurso" checked/>Minicurso</label><br>
+		<label><input type="radio" name="tinscrição" id="csemi" value="seminario"/>Seminário</label><br>
+        <label><input type="radio" name="tinscrição" id="cofcina" value="oficina"  />Oficina</label><br>
+        <label><input type="radio" name="tinscrição" id="cminip" value="minipalestra"  />Minipalestra</label><br>
+        <label><input type="radio" name="tinscrição" id="capresentação" value="apresentação de trabalhos"  />Apresentação de Trabalhos</label><br>
+        <label><input type="radio" name="tinscrição" id="coutros" value="outros"  />Outros <input type="text" name="to" id="co" size="30" maxlength="40"/></label><br>
+        
+    </fieldset> 
+    
+    
+    
+    
+    
+    <fieldset id="proposta"><legend>Proposta do Apresentador</legend>
+    
+    	<p>
+    	  <label>Nome:*
+    	    <input type="text" name="tnome" id="cnome" size="30" maxlength="40" placeholder="Nome Completo" autofocus="autofocus" required="required" /></label></p>	    
+        <p><label>Telefone Residencial:*
+            <input type="tel" name="ttelefone" id="ctelefone" patternern="\([0-9]{2}\) [0-9]{4}-[0-9]{4}$"  maxlength="14" placeholder="(xx)xxxx-xxxx" title="(21)1234-1245" required="required"/></label></p>
+        <p><label>Telefone Celular:<input type="tel" name="ttelefone" id="ctelefone" patternern="\([0-9]{2}\) [0-9]{4}-[0-9]{5}$"  maxlength="14" placeholder="(xx)xxxxx-xxxx" title="(21)12345-1245"/></label></p>
+        <p>
+          <label>e-mail:* 
+            <input type="e-mail" name="tmail" id="cmail" size="30" maxlength="40" required="required"/></label></p>
+        <hr />
+        <p>
+          <label>Tema:*
+            <input type="text" name="ttema" id="ctema" size="30" maxlength="40"autofocus="autofocus" required="required" /></label></p>
+         <p>
+           <label>Carga Horária:*
+             <input type="number" min="1" max="40" step="1" name="thora" id="chora" size="10" maxlength="15"autofocus="autofocus" required="required" /> Horas</label></p>
+         <p><label>Unidade:*
+             <input list="unidade" name="cunidade" required="required" />
+         	<datalist id="unidade">
+       		  <option value="Caxias"  />
+        	  <option value="Lapa"  />
+         	  <option value="São João de Miriti"  /></datalist> </label>  </p>
+              
+                            
+              
+      </fieldset>
+              
+      
+      <fieldset id="recursos"><legend>Recursos Necessário</legend>
+
+
+		<label><input type="checkbox" name="trecursos" id="tv" value="TV" checked="checked" autofocus="autofocus"/>TV</label><br>
+        <label> <input type="checkbox" name="trecursos" id="datashow" value="DataShow"  />DataShow</label><br>
+        <label><input type="checkbox" name="trecursos" id="caixa_de_som" value="Caixa de Som"  />Caixa de Som</label><br>
+        <label><input type="checkbox" name="trecursos" id="microfone" value="Microfone"  />Microfone</label><br>
+        <label><input type="checkbox" name="trecursos" id="computador" value="Computador"  />Computador</label> <br />
+        <label><input type="checkbox" name="trecursos" id="dvd" value="DVD"  />DVD</label> <br />
+        <label><input type="checkbox" name="trecursos" id="radio" value="Rádio"  />Rádio</label> <br />
+        
+        
+    </fieldset> 
+    
+    <fieldset id="ementa" ><legend>Ementa do Projeto</legend>
+    	
+    	<textarea name="tementa" placeholder="Digite o texto aqui:" rows="10" cols="150" ></textarea>
+    
+       
+    </fieldset>
+    
+    <fieldset id="organizador" ><legend>Preenchido Pelo Organizador</legend>
+    
+    	<p><label>Data:<input type="date" name="dorganizador" id="data"  /></label></p>
+        <p><label>Sala:<input type="text" name="sorganizador" id="Sala"  size="5" /></label></p>
+        <p><label>Horário:<input type="time" name="torganizador" id="horario"  /> às: <input type="time" name="torganizador" id="horario2"  /></label></p>
+        <legend>Recursos Agendados:</legend>
+        <label><input type="radio" name="organizador" id="sim" autofocus="autofocus" />Sim</label>
+        <label><input type="radio" name="organizador" id="nao" />Não</label> <br />
+    
+    </fieldset>
+    
+    
+    <fieldset id="observacao" ><legend>Observações</legend>
+    	
+    	<textarea name="tobservacao" placeholder="Observações:" rows="10" cols="150" ></textarea>
+    
+       
+    </fieldset>   
+      
+      
+      
+      
+              
+         
+    <p align="center">
+<input type="submit" name="enviar"  id="enviar" value="Enviar"  /></p>    
+</fieldset>
+
+</form>
