@@ -1,0 +1,60 @@
+/*Este programa em C lê o nome e o preco de 10 produtos e armazena esses dados em dois vetores,
+ um para o nome e um para o preco e imprime um relatorio com o nome, preco e novo preco dos produtos.
+ 1- Os produtos com preco abaixo de R$ 100,00 serão atualizados em 12%
+ 2- Os produtos com preco igual ou superior a R$ 100,00 serao atualizados em 15% 
+ 3- será impresso o nome do produto com maior preco atualizado 
+ 4- será impresso o nome do produto com menor preco atualizado */
+#include <stdio.h>
+ #include <locale.h> /* biblioteca de linguagem*/
+ #include <string.h> 
+ main (){
+ setlocale (LC_ALL, "Portuguese"); /* a linguagem configurada é portugues*/
+ char nome[10][30], maiorpreco[1][30], menorpreco[1][30]; 
+ float preco[10], npreco[10], maior=0, menor;
+ int i;
+ for (i=0; i<10; i++){ /* neste for entrará todos os dados a serem trabalhados*/
+ printf ("Digite o nome do produto %d: ", i+1);
+ gets (nome[i]); /* aqui usa-se o gets pois trata-se de um char o uso do scanf resultaria no mal funcionamento do programa*/
+ printf ("Digite o preço do produto %d:R$ ", i+1);
+ scanf ("%f", &preco[i]);
+ while (preco[i] <= 0){ /* o while irá ser executado caso o valor seja 0 ou valor negativo*/
+ printf("\nValor inválido!!!!!");
+ printf ("\nDigite o preço novamente:R$ ");
+ scanf ("%f", &preco[i]);
+ }
+ getchar (); /* este getchar irá limpar a tela e aparecerá o resultado em seguida*/
+ if (preco[i]<100) /* if fará o comparativo dos preços*/
+ npreco[i] = preco[i] *1.12;
+ else
+ npreco[i] = preco[i]* 1.15;
+ }
+ printf ("\nTABELA DE PRODUTOS:\n"); /* a tabela mostrará o resultado dos dados processados no if*/
+ printf("\n--------------------------------------------------------------------");
+ printf("\n| %-30s| %-15s| %s|","Nome", "preço", "preço atualizado");
+ printf("\n--------------------------------------------------------------------");
+ for (i=0; i<10; i++){
+ printf ("\n| %-30s", nome[i]);
+ printf ("| %-15.2f| %-15.2f |", preco[i],npreco[i]);
+ printf("\n--------------------------------------------------------------------");
+ }
+for (i=0; i<10; i++){ /* este for será executado para verificar qual o nome com maior preço e qual com o menor*/
+ if (preco[i] > maior){
+ maior = preco[i];
+ strcpy (maiorpreco[0], nome[i]);
+ }
+ }
+ menor = maior;
+ for (i=0; i<10; i++){
+ if (menor > preco[i]){
+ menor = preco[i];
+ strcpy (menorpreco[0], nome[i]);
+ }
+ }
+printf("\n--------------------------------------------------------------------"); /* aqui será impresso o nome maior preço e o menor*/
+printf ("\nO nome do produto com maior preço é: %-30s|", maiorpreco[0]);
+ printf("\n--------------------------------------------------------------------");
+printf ("\nO nome do produto com menor preço é: %-30s|", menorpreco[0]);
+ printf("\n--------------------------------------------------------------------");
+getch ();
+ return 0;
+ }
